@@ -1,7 +1,7 @@
 Role Name
 =========
 
-lighthouse-role
+roles-lighthouse
 
 Requirements
 ------------
@@ -16,12 +16,17 @@ Role Variables
 | lighthouse_dest | Template directory for storing installation scripts |
 | hostport        | Port number on which was started lighthouse control panel|
  
+How to install in subfolder **roles** of current project folder
+---------------
+
+ansible-galaxy role install --roles-path ./roles git+https://github.com/grigoryevpavel/roles-lighthouse.git
+
 How to use role
 ----------------
 
   - hosts: servers
     roles:
-        - { role: lighthouse-role }
+        - { role: roles-lighthouse }
 
 License
 -------
