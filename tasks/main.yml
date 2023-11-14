@@ -1,0 +1,62 @@
+---
+- name: Install nginx, git 
+  become: true
+  apt:
+    name: 
+      - nginx=1.18.0* 
+      - git
+    update_cache: true
+  tags: [nginx,git] 
+- name: Allow all access to tcp port 80
+  become: true
+  ufw:
+    rule: allow
+    port: '{{ hostport }}'
+    proto: tcp
+  tags: nginx
+- name: Configure auto start nginx
+  become: true
+  command: "systemctl enable nginx"  
+  notify: 
+    - Start nginx service
+  tags: nginx
+
+- name: Create installation directory for lighthouse
+  become: true
+  file:
+    path: "{{ lighthouse_dest }}"
+    owner: administrator
+    state: directory
+    mode: '0755'
+  tags: lighthouse
+
+- name: Download lighthouse repo
+  become: true
+  git: 
+    repo: "https://github.com/VKCOM/lighthouse.git"
+    dest: "{{ lighthouse_dest }}"
+    update: no
+  tags: lighthouse
+
+- name: Apply site conf
+  become: true
+  template:
+    src: sites-available.conf.j2
+    dest: /etc/nginx/sites-available/lighthouse.conf
+    owner: root
+    group: root
+    mode: '0600'
+  tags: [lighthouse,lighthouse_conf]
+
+- name: Enable lighthouse site
+  become: true
+  file:
+    src: /etc/nginx/sites-available/lighthouse.conf
+    dest: /etc/nginx/sites-enabled/lighthouse.conf
+    state: link
+  notify: Start nginx service
+  tags: [lighthouse,lighthouse_conf]
+
+- name: Flush handlers
+  meta: flush_handlers
+  tags: [lighthouse,lighthouse_conf]

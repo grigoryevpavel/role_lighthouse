@@ -1,0 +1,7 @@
+---
+lighthouse:
+  hosts:
+    lighthouse-01:
+      ansible_host: 84.201.130.131
+      ansible_ssh_user: administrator
+
