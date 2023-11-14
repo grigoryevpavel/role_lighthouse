@@ -12,9 +12,8 @@ Role Variables
 --------------
 
 | Variable name | Variable description |
-|-------------|---------------------|
+|---------------|----------------------|
 | lighthouse_dest | Template directory for storing installation scripts |
-|-----------------|-----------------------------------------------------|
 | hostport        | Port number on which was started lighthouse control panel|
  
 How to use role
