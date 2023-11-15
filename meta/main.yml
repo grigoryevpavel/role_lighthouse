@@ -19,3 +19,8 @@ galaxy_info:
 
   galaxy_tags: 
     - lighthouse
+
+dependencies:
+  - roles-nginx
+    vars:
+      hostport: "{{ hostport }}""

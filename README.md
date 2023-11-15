@@ -14,7 +14,13 @@ Role Variables
 | Variable name | Variable description |
 |---------------|----------------------|
 | lighthouse_dest | Template directory for storing installation scripts |
-| hostport        | Port number on which was started lighthouse control panel|
+| hostport        | Port number on which is started lighthouse control panel|
+ 
+
+Role Dependencies
+--------------
+
+Role depends on role roles-nginx.
  
 How to install in subfolder **roles** of current project folder
 ---------------

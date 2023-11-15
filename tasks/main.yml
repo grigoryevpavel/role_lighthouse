@@ -1,26 +1,4 @@
 ---
-- name: Install nginx, git 
-  become: true
-  apt:
-    name: 
-      - nginx=1.18.0* 
-      - git
-    update_cache: true
-  tags: [nginx,git] 
-- name: Allow all access to tcp port 80
-  become: true
-  ufw:
-    rule: allow
-    port: '{{ hostport }}'
-    proto: tcp
-  tags: nginx
-- name: Configure auto start nginx
-  become: true
-  command: "systemctl enable nginx"  
-  notify: 
-    - Start nginx service
-  tags: nginx
-
 - name: Create installation directory for lighthouse
   become: true
   file:
