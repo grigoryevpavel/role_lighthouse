@@ -3,7 +3,7 @@ Role Name
 
 roles-lighthouse
 
-Requirements
+Description
 ------------
 
 Role installs lighthouse. 
