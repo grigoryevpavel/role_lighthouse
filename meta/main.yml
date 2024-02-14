@@ -1,4 +1,6 @@
-galaxy_info:
+galaxy_info: 
+  role_name: role_lighthouse
+  namespace: grigoryevpavel
   author: Grigoryev Pavel
   description: Lighthouse role
   company: Grigoryev
@@ -21,6 +23,6 @@ galaxy_info:
     - lighthouse
 
 dependencies:
-  - role: roles-nginx
+  - role: role_nginx
     vars:
       hostport: 8080
