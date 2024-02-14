@@ -1,7 +1,7 @@
 Role Name
 =========
 
-roles-lighthouse
+role_lighthouse
 
 Description
 ------------
@@ -20,7 +20,7 @@ Role Variables
 Role Dependencies
 --------------
 
-Role depends on role roles-nginx.
+Role depends on role role_nginx.
  
 How to install in subfolder **roles** of current project folder
 ---------------
@@ -32,7 +32,7 @@ How to use role
 
   - hosts: servers
     roles:
-        - { role: roles-lighthouse }
+        - { role: role_lighthouse }
 
 License
 -------
