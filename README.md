@@ -47,7 +47,7 @@ Role depends on role role_nginx.
 How to install in subfolder **roles** of current project folder
 ---------------
 1. Install role_nginx:
-    > ansible-galaxy role install --roles-path ./roles git+https://github.com/grigoryevpavel/roles-lighthouse.git
+    > ansible-galaxy role install --roles-path ./roles git+https://github.com/grigoryevpavel/roles-nginx.git
 2.  Install role role_lighthouse:
     > ansible-galaxy role install --roles-path ./roles git+https://github.com/grigoryevpavel/roles-lighthouse.git
 
