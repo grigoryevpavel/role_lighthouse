@@ -2,4 +2,4 @@
 - hosts: lighthouse
   remote_user: administrator
   roles:
-    - lighthouse-role
+    - role_lighthouse
