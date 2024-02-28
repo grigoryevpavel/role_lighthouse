@@ -23,6 +23,8 @@ galaxy_info:
     - lighthouse
 
 dependencies:
-  - role: https://github.com/grigoryevpavel/roles-nginx/archive/refs/heads/master.zip
+  - role: 
+      name: role_nginx
+      src: https://github.com/grigoryevpavel/roles-nginx.git
     vars:
       hostport: 8080
